@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+ENV/
+
+# PatentsView bulk extracts are huge — download locally after clone (see README).
+data/raw/*.tsv

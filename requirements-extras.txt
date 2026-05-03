@@ -1,0 +1,3 @@
+# Optional tooling (dashboard + static plots)
+streamlit>=1.28
+matplotlib>=3.8

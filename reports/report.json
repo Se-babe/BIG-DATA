@@ -1,0 +1,320 @@
+{
+  "total_patents": 800,
+  "top_inventors": [
+    {
+      "name": "Ali Mahdevari",
+      "patents": 3
+    },
+    {
+      "name": "Laziz Bouzidi",
+      "patents": 3
+    },
+    {
+      "name": "Prasanth Kumar Sasidharan Pillai",
+      "patents": 3
+    },
+    {
+      "name": "Shaojun Li",
+      "patents": 3
+    },
+    {
+      "name": "Suresh Narine",
+      "patents": 3
+    },
+    {
+      "name": "Alan M. Schilowitz",
+      "patents": 2
+    },
+    {
+      "name": "Anil Kumar",
+      "patents": 2
+    },
+    {
+      "name": "Andrea Mahr",
+      "patents": 2
+    },
+    {
+      "name": "Cameron Alexander FRAYLING",
+      "patents": 2
+    },
+    {
+      "name": "Christophe Gayton",
+      "patents": 2
+    },
+    {
+      "name": "David J. Baillargeon",
+      "patents": 2
+    },
+    {
+      "name": "Duane G. McDonald",
+      "patents": 2
+    },
+    {
+      "name": "Gerald D. Adler",
+      "patents": 2
+    },
+    {
+      "name": "Han Cao",
+      "patents": 2
+    },
+    {
+      "name": "Haiyang Hu",
+      "patents": 2
+    },
+    {
+      "name": "Harpreet Singh",
+      "patents": 2
+    },
+    {
+      "name": "Haruhiko Yamaguchi",
+      "patents": 2
+    },
+    {
+      "name": "Jens Fritsche",
+      "patents": 2
+    },
+    {
+      "name": "Jincheng Xiong",
+      "patents": 2
+    },
+    {
+      "name": "John Christopher Mauro",
+      "patents": 2
+    },
+    {
+      "name": "Juan Yan",
+      "patents": 2
+    },
+    {
+      "name": "Kerri Crossey",
+      "patents": 2
+    },
+    {
+      "name": "Lijia Wei",
+      "patents": 2
+    },
+    {
+      "name": "Loren D. Walensky",
+      "patents": 2
+    },
+    {
+      "name": "Martin C. Green",
+      "patents": 2
+    }
+  ],
+  "top_companies": [
+    {
+      "name": "Unknown organization",
+      "patents": 16
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 12
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 11
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 11
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 9
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 6
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 6
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 6
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 5
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 5
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 5
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 5
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 5
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 5
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 5
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 4
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 4
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 4
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 4
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 4
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 4
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 4
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 4
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 4
+    },
+    {
+      "name": "Unknown organization",
+      "patents": 3
+    }
+  ],
+  "top_countries": [
+    {
+      "country": "US",
+      "share": 0.427273
+    },
+    {
+      "country": "JP",
+      "share": 0.176136
+    },
+    {
+      "country": "DE",
+      "share": 0.082955
+    },
+    {
+      "country": "KR",
+      "share": 0.038636
+    },
+    {
+      "country": "GB",
+      "share": 0.0375
+    },
+    {
+      "country": "CN",
+      "share": 0.034091
+    },
+    {
+      "country": "CA",
+      "share": 0.031818
+    },
+    {
+      "country": "FR",
+      "share": 0.028409
+    },
+    {
+      "country": "IL",
+      "share": 0.015909
+    },
+    {
+      "country": "IT",
+      "share": 0.013636
+    },
+    {
+      "country": "BE",
+      "share": 0.013636
+    },
+    {
+      "country": "NL",
+      "share": 0.0125
+    },
+    {
+      "country": "TW",
+      "share": 0.011364
+    },
+    {
+      "country": "CH",
+      "share": 0.011364
+    },
+    {
+      "country": "IN",
+      "share": 0.010227
+    },
+    {
+      "country": "SE",
+      "share": 0.007955
+    },
+    {
+      "country": "DK",
+      "share": 0.007955
+    },
+    {
+      "country": "AT",
+      "share": 0.007955
+    },
+    {
+      "country": "ES",
+      "share": 0.006818
+    },
+    {
+      "country": "FI",
+      "share": 0.005682
+    },
+    {
+      "country": "MX",
+      "share": 0.004545
+    },
+    {
+      "country": "(unknown)",
+      "share": 0.004545
+    },
+    {
+      "country": "NO",
+      "share": 0.003409
+    },
+    {
+      "country": "BR",
+      "share": 0.003409
+    },
+    {
+      "country": "SA",
+      "share": 0.002273
+    }
+  ],
+  "patents_by_year": [
+    {
+      "year": 2018,
+      "patents": 800
+    }
+  ],
+  "notes": {
+    "country_share_denominator": "Sum of patent counts from inventor-country linkage (can exceed distinct patents).",
+    "filing_date": "Uses patent grant date when application-level filing dates are not loaded.",
+    "country_trends_csv": "Rows are patents per grant year (Q4); the filename mirrors the coursework handout."
+  }
+}
