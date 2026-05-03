@@ -142,6 +142,6 @@ Replace `YOUR_USER/YOUR_REPO` with your account and repo name. If Git rejects a 
 
 ## Troubleshooting
 
-- **Memory pressure with abstracts on the full corpus:** `clean.py` warns when `g_patent_abstract.tsv` is present without `--sample`. Prefer subset mode or omit abstracts for very large runs.
+- **Abstracts on the full corpus:** without `--sample`, `clean.py` streams `g_patent_abstract.tsv` into a **temporary SQLite file** (disk-backed), then joins per patent chunk—much safer than loading all abstracts into RAM. Expect extra runtime and temporary disk space during `clean.py`.
 - **Company names show as `Unknown organization`:** add `g_assignee_disambiguated.tsv` so `clean.py` can map persistent assignee IDs.
 - **UTF-8 issues in TSV rows:** cleaning uses `encoding_errors="replace"` to keep the pipeline running; inspect raw rows if you need lossless text.

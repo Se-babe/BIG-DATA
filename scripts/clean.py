@@ -2,7 +2,7 @@
 Read PatentsView-style TSV exports, normalize with pandas (chunked), and write clean CSVs.
 
 Optional: set --sample N to process only the first N patent_ids in g_patent.tsv (faster demos).
-Grant date from g_patent is stored in filing_date when g_application.tsv is not provided; see README.
+When g_application.tsv is missing, filing_date falls back to grant date from g_patent; year prefers filing_date when parseable.
 
 Optional raw files (place in data/raw/) for richer outputs:
   g_patent_abstract.tsv, g_assignee_disambiguated.tsv, g_application.tsv, g_cpc_current.tsv
@@ -11,7 +11,10 @@ Optional raw files (place in data/raw/) for richer outputs:
 from __future__ import annotations
 
 import argparse
+import os
+import sqlite3
 import sys
+import tempfile
 from pathlib import Path
 
 import pandas as pd
@@ -123,6 +126,51 @@ def _build_company_names(
             if cid and nm and cid.lower() != "nan":
                 names[cid] = nm
     return names
+
+
+def _abstract_lookup_sql(con: sqlite3.Connection, patent_ids: list[str]) -> dict[str, str]:
+    """Batch-fetch abstracts; keeps SQLite bind parameter lists small."""
+    out: dict[str, str] = {}
+    batch_size = 450
+    for i in range(0, len(patent_ids), batch_size):
+        batch = patent_ids[i : i + batch_size]
+        placeholders = ",".join("?" * len(batch))
+        cur = con.execute(f"SELECT patent_id, txt FROM abs WHERE patent_id IN ({placeholders})", batch)
+        for pid, txt in cur:
+            out[str(pid)] = str(txt)
+    return out
+
+
+def _build_abstract_sqlite(abstract_path: Path, chunksize: int) -> sqlite3.Connection:
+    """Stream abstracts into a temp SQLite DB (full-corpus safe vs. RAM dict)."""
+    fd, path_str = tempfile.mkstemp(prefix="pv_abs_", suffix=".sqlite")
+    os.close(fd)
+    db_path = Path(path_str)
+    con = sqlite3.connect(db_path)
+    try:
+        con.execute("CREATE TABLE abs(patent_id TEXT PRIMARY KEY, txt TEXT)")
+        abs_pid_col = abs_txt_col = None
+        for chunk in _read_tsv_chunks(abstract_path, chunksize):
+            cols = list(chunk.columns)
+            if abs_pid_col is None:
+                abs_pid_col = next((c for c in cols if c.lower() == "patent_id"), cols[0])
+                abs_txt_col = next(
+                    (c for c in cols if "abstract" in c.lower()),
+                    cols[1] if len(cols) > 1 else cols[0],
+                )
+            chunk = chunk[[abs_pid_col, abs_txt_col]].dropna(subset=[abs_pid_col])
+            pid_series = chunk[abs_pid_col].astype(str).str.strip()
+            txt_series = chunk[abs_txt_col].astype(str)
+            rows = list(zip(pid_series, txt_series))
+            con.executemany("INSERT OR REPLACE INTO abs(patent_id, txt) VALUES (?, ?)", rows)
+        con.execute("CREATE INDEX IF NOT EXISTS idx_abs_patent ON abs(patent_id)")
+        con.commit()
+        setattr(con, "_pv_tmp_path", db_path)
+        return con
+    except Exception:
+        con.close()
+        db_path.unlink(missing_ok=True)
+        raise
 
 
 def _merge_optional_application_dates(application_path: Path, chunksize: int, patent_allowlist: set[str] | None) -> dict[str, str]:
@@ -272,28 +320,29 @@ def run_clean(sample: int | None, chunksize: int) -> None:
     pd.DataFrame(comp_rows).to_csv(PROCESSED / "clean_companies.csv", index=False)
 
     abstract_map: dict[str, str] = {}
+    abstract_sql_con: sqlite3.Connection | None = None
     abstract_path = RAW / "g_patent_abstract.tsv"
     if abstract_path.exists():
-        if patent_allowlist is None:
-            print(
-                "Warning: indexing full abstracts into RAM can exhaust memory; prefer --sample N or omit abstracts.",
-                file=sys.stderr,
-            )
         print("Indexing abstracts ...")
-        abs_pid_col = abs_txt_col = None
-        for chunk in _read_tsv_chunks(abstract_path, chunksize):
-            cols = list(chunk.columns)
-            if abs_pid_col is None:
-                abs_pid_col = next((c for c in cols if c.lower() == "patent_id"), cols[0])
-                abs_txt_col = next(
-                    (c for c in cols if "abstract" in c.lower()),
-                    cols[1] if len(cols) > 1 else cols[0],
-                )
-            chunk = chunk[[abs_pid_col, abs_txt_col]].dropna(subset=[abs_pid_col])
-            if patent_allowlist is not None:
+        if patent_allowlist is not None:
+            abs_pid_col = abs_txt_col = None
+            for chunk in _read_tsv_chunks(abstract_path, chunksize):
+                cols = list(chunk.columns)
+                if abs_pid_col is None:
+                    abs_pid_col = next((c for c in cols if c.lower() == "patent_id"), cols[0])
+                    abs_txt_col = next(
+                        (c for c in cols if "abstract" in c.lower()),
+                        cols[1] if len(cols) > 1 else cols[0],
+                    )
+                chunk = chunk[[abs_pid_col, abs_txt_col]].dropna(subset=[abs_pid_col])
                 chunk = chunk[chunk[abs_pid_col].isin(patent_allowlist)]
-            for pid, txt in zip(chunk[abs_pid_col].astype(str), chunk[abs_txt_col].astype(str)):
-                abstract_map[str(pid)] = txt
+                if chunk.empty:
+                    continue
+                for pid, txt in zip(chunk[abs_pid_col].astype(str), chunk[abs_txt_col].astype(str)):
+                    abstract_map[str(pid)] = txt
+        else:
+            print("Building disk-backed SQLite index for abstracts (full corpus) ...")
+            abstract_sql_con = _build_abstract_sqlite(abstract_path, chunksize)
 
     cpc_best: dict[str, tuple[int, str]] = {}
     cpc_path = RAW / "g_cpc_current.tsv"
@@ -303,7 +352,12 @@ def run_clean(sample: int | None, chunksize: int) -> None:
             cols_lc = {c.lower(): c for c in chunk.columns}
             pid_col = cols_lc.get("patent_id")
             seq_col = cols_lc.get("cpc_sequence")
-            sub_col = cols_lc.get("cpc_subsection") or cols_lc.get("cpc_group") or cols_lc.get("cpc_class")
+            sub_col = (
+                cols_lc.get("cpc_subsection")
+                or cols_lc.get("cpc_subclass")
+                or cols_lc.get("cpc_group")
+                or cols_lc.get("cpc_class")
+            )
             if pid_col is None or sub_col is None:
                 continue
             work = chunk[[pid_col, sub_col] + ([seq_col] if seq_col else [])].copy()
@@ -324,35 +378,53 @@ def run_clean(sample: int | None, chunksize: int) -> None:
 
     print(f"Writing {PROCESSED / 'clean_patents.csv'} ...")
     patent_parts: list[pd.DataFrame] = []
-    for chunk in _read_tsv_chunks(patent_path, chunksize):
-        if patent_allowlist is not None:
-            chunk = chunk[chunk["patent_id"].isin(patent_allowlist)]
-        if chunk.empty:
-            continue
-        pid_series = chunk["patent_id"].astype(str).str.strip()
-        grant_dates = chunk["patent_date"].fillna("").astype(str).str.strip()
-        if app_dates:
-            mapped = pid_series.map(app_dates)
-            filing_series = mapped.where(mapped.notna() & (mapped.astype(str).str.strip() != ""), grant_dates)
-        else:
-            filing_series = grant_dates
+    try:
+        for chunk in _read_tsv_chunks(patent_path, chunksize):
+            if patent_allowlist is not None:
+                chunk = chunk[chunk["patent_id"].isin(patent_allowlist)]
+            if chunk.empty:
+                continue
+            pid_series = chunk["patent_id"].astype(str).str.strip()
+            grant_dates = chunk["patent_date"].fillna("").astype(str).str.strip()
+            if app_dates:
+                mapped = pid_series.map(app_dates)
+                filing_series = mapped.where(mapped.notna() & (mapped.astype(str).str.strip() != ""), grant_dates)
+            else:
+                filing_series = grant_dates
 
-        out = pd.DataFrame(
-            {
-                "patent_id": pid_series,
-                "title": chunk["patent_title"].fillna("").astype(str),
-                "abstract": pid_series.map(lambda p: abstract_map.get(p, "")),
-                "filing_date": filing_series.astype(str),
-                "year": chunk["patent_date"].map(_parse_year),
-                "cpc_primary": pid_series.map(lambda p: cpc_map.get(p, "")),
-            }
-        )
+            if abstract_sql_con is not None:
+                uids = pid_series.unique().tolist()
+                loc_ab = _abstract_lookup_sql(abstract_sql_con, uids)
+                abstract_series = pid_series.map(loc_ab).fillna("").astype(str)
+            else:
+                abstract_series = pid_series.map(lambda p: abstract_map.get(p, ""))
 
-        patent_parts.append(out)
+            filing_year = filing_series.astype(str).map(_parse_year)
+            grant_year = chunk["patent_date"].map(_parse_year)
+            year_series = filing_year.where(filing_year.notna(), grant_year)
 
-    if not patent_parts:
-        raise RuntimeError("No patent rows written. Check filters and raw files.")
-    pd.concat(patent_parts, ignore_index=True).to_csv(PROCESSED / "clean_patents.csv", index=False)
+            out = pd.DataFrame(
+                {
+                    "patent_id": pid_series,
+                    "title": chunk["patent_title"].fillna("").astype(str),
+                    "abstract": abstract_series,
+                    "filing_date": filing_series.astype(str),
+                    "year": year_series,
+                    "cpc_primary": pid_series.map(lambda p: cpc_map.get(p, "")),
+                }
+            )
+
+            patent_parts.append(out)
+
+        if not patent_parts:
+            raise RuntimeError("No patent rows written. Check filters and raw files.")
+        pd.concat(patent_parts, ignore_index=True).to_csv(PROCESSED / "clean_patents.csv", index=False)
+    finally:
+        if abstract_sql_con is not None:
+            tmp_path = getattr(abstract_sql_con, "_pv_tmp_path", None)
+            abstract_sql_con.close()
+            if tmp_path is not None:
+                Path(tmp_path).unlink(missing_ok=True)
 
     print("Done.")
     print(f"  {PROCESSED / 'clean_patents.csv'}")
