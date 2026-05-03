@@ -7,5 +7,17 @@ __pycache__/
 venv/
 ENV/
 
-# PatentsView bulk extracts are huge — download locally after clone (see README).
-data/raw/*.tsv
+# --- Large / downloadable artifacts (clone repo, then fetch PatentsView bulk locally) ---
+data/raw/*
+!data/raw/.gitkeep
+
+# SQLite warehouse can grow very large on full runs; recreate with: python scripts/load.py
+database/*.db
+
+# Common bulk-archive formats
+*.zip
+*.gz
+*.tar
+*.tgz
+*.7z
+*.parquet

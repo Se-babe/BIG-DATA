@@ -116,13 +116,29 @@ The app reads `database/patents.db` (same queries as `sql/queries.sql`) and show
 
 `analyze.py` executes all of them, prints a console brief, and refreshes `reports/`.
 
-## Artifacts checked into Git
+## What this repo includes vs. ignores
 
-- `clean_*.csv` under `data/processed/`
-- `database/patents.db` (recreate anytime with `load.py`)
-- `reports/*.csv`, `reports/report.json`
+**Tracked (good for GitHub):** code, `sql/`, sample **`data/processed/*.csv`**, **`reports/`**, `data/raw/.gitkeep`.
 
-Regenerate locally to match your chosen `--sample` window or downloaded snapshot.
+**Ignored (too large or re-downloadable):** anything under **`data/raw/`** except `.gitkeep`, PatentsView **`*.tsv`** archives there, **`database/*.db`**, and common **`*.zip` / `*.gz`** payloads. After cloning, download bulk slices into `data/raw/`, run **`python scripts/load.py`** to create **`database/patents.db`**, then **`python scripts/analyze.py`** if needed.
+
+Regenerate processed CSVs locally with `clean.py` to match your `--sample` window or full corpus.
+
+## Push to GitHub
+
+1. Create an empty repository on GitHub (no README/license if this folder already has them).
+2. From the project root:
+
+```bash
+git add -A
+git status   # confirm no giant files staged
+git commit -m "Patent pipeline: ignore bulk raw data and SQLite DB"
+git remote add origin https://github.com/YOUR_USER/YOUR_REPO.git
+git branch -M main
+git push -u origin main
+```
+
+Replace `YOUR_USER/YOUR_REPO` with your account and repo name. If Git rejects a push because a file exceeds **100 MB**, run `git rm --cached <path>` for that path, add a matching rule to `.gitignore`, commit again, then push.
 
 ## Troubleshooting
 

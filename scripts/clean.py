@@ -96,7 +96,11 @@ def _infer_company_lookup_columns(columns: list[str]) -> tuple[str | None, str |
     return id_col, name_col
 
 
-def _build_company_names(assignee_disambig_path: Path, chunksize: int) -> dict[str, str]:
+def _build_company_names(
+    assignee_disambig_path: Path,
+    chunksize: int,
+    patent_allowlist: set[str] | None = None,
+) -> dict[str, str]:
     id_col = name_col = None
     names: dict[str, str] = {}
     for chunk in _read_tsv_chunks(assignee_disambig_path, chunksize):
@@ -108,6 +112,10 @@ def _build_company_names(assignee_disambig_path: Path, chunksize: int) -> dict[s
                     file=sys.stderr,
                 )
                 return {}
+        if patent_allowlist is not None and "patent_id" in chunk.columns:
+            chunk = chunk[chunk["patent_id"].isin(patent_allowlist)]
+            if chunk.empty:
+                continue
         chunk = chunk.dropna(subset=[id_col])
         chunk[id_col] = chunk[id_col].astype(str).str.strip()
         chunk[name_col] = chunk[name_col].astype(str).str.strip()
@@ -166,7 +174,7 @@ def run_clean(sample: int | None, chunksize: int) -> None:
     company_names: dict[str, str] = {}
     if assignee_disambig_path.exists():
         print("Building company names from g_assignee_disambiguated.tsv ...")
-        company_names = _build_company_names(assignee_disambig_path, chunksize)
+        company_names = _build_company_names(assignee_disambig_path, chunksize, patent_allowlist)
     else:
         print("Note: add g_assignee_disambiguated.tsv to populate real company names.")
 
