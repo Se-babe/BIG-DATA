@@ -1,309 +1,309 @@
 {
-  "total_patents": 25000,
+  "total_patents": 50000,
   "top_inventors": [
     {
       "name": "Kangguo Cheng",
-      "patents": 29
+      "patents": 56
     },
     {
       "name": "Shunpei Yamazaki",
-      "patents": 24
+      "patents": 52
     },
     {
       "name": "Roderick A. Hyde",
-      "patents": 17
-    },
-    {
-      "name": "Aed M. Dudar",
-      "patents": 15
-    },
-    {
-      "name": "Alexander Reznicek",
-      "patents": 14
-    },
-    {
-      "name": "Lowell L. Wood, JR.",
-      "patents": 14
-    },
-    {
-      "name": "Ruilong Xie",
-      "patents": 14
-    },
-    {
-      "name": "Frederick E. Shelton, IV",
-      "patents": 13
-    },
-    {
-      "name": "Xue Dong",
-      "patents": 12
-    },
-    {
-      "name": "Gert Jan Van Lieshout",
-      "patents": 11
-    },
-    {
-      "name": "Hanbyul Seo",
-      "patents": 11
-    },
-    {
-      "name": "Seungmin LEE",
-      "patents": 11
-    },
-    {
-      "name": "Tao Luo",
-      "patents": 11
-    },
-    {
-      "name": "Yeong-Ming Chang",
-      "patents": 11
-    },
-    {
-      "name": "Eunjong Lee",
-      "patents": 10
-    },
-    {
-      "name": "Hongyuan Zhang",
-      "patents": 10
-    },
-    {
-      "name": "Jaehoon Chung",
-      "patents": 10
+      "patents": 32
     },
     {
       "name": "Jason K. Resch",
-      "patents": 10
+      "patents": 28
     },
     {
-      "name": "Jordin T. Kare",
-      "patents": 10
-    },
-    {
-      "name": "Lei Wang",
-      "patents": 10
+      "name": "Hanbyul Seo",
+      "patents": 26
     },
     {
       "name": "Suckchel Yang",
-      "patents": 10
+      "patents": 26
     },
     {
-      "name": "Tenko Yamashita",
-      "patents": 10
+      "name": "Alexander Reznicek",
+      "patents": 24
     },
     {
-      "name": "Yunjung Yi",
-      "patents": 10
+      "name": "Joonkui Ahn",
+      "patents": 24
     },
     {
-      "name": "Aleksandar Damnjanovic",
-      "patents": 9
+      "name": "Aed M. Dudar",
+      "patents": 23
     },
     {
       "name": "Devendra K. Sadana",
-      "patents": 9
+      "patents": 23
+    },
+    {
+      "name": "Frederick E. Shelton, IV",
+      "patents": 23
+    },
+    {
+      "name": "Lowell L. Wood, JR.",
+      "patents": 23
+    },
+    {
+      "name": "Chen-Hua Yu",
+      "patents": 22
+    },
+    {
+      "name": "Jordin T. Kare",
+      "patents": 22
+    },
+    {
+      "name": "Ruilong Xie",
+      "patents": 22
+    },
+    {
+      "name": "Seungmin LEE",
+      "patents": 22
+    },
+    {
+      "name": "Xue Dong",
+      "patents": 22
+    },
+    {
+      "name": "Tao Luo",
+      "patents": 21
+    },
+    {
+      "name": "Sarbajit K. Rakshit",
+      "patents": 20
+    },
+    {
+      "name": "Stuart C. Salter",
+      "patents": 20
+    },
+    {
+      "name": "Yunjung Yi",
+      "patents": 20
+    },
+    {
+      "name": "Hongyuan Zhang",
+      "patents": 19
+    },
+    {
+      "name": "Lei Wang",
+      "patents": 18
+    },
+    {
+      "name": "Gert Jan Van Lieshout",
+      "patents": 17
+    },
+    {
+      "name": "James E. Bostick",
+      "patents": 17
     }
   ],
   "top_companies": [
     {
       "name": "International Business Machines Corporation",
-      "patents": 606
+      "patents": 1462
     },
     {
       "name": "SAMSUNG DISPLAY CO., LTD.",
-      "patents": 586
+      "patents": 1299
     },
     {
       "name": "CANON KABUSHIKI KAISHA",
-      "patents": 232
-    },
-    {
-      "name": "FORD GLOBAL TECHNOLOGIES, LLC",
-      "patents": 211
+      "patents": 495
     },
     {
       "name": "Intel Corporation",
-      "patents": 182
-    },
-    {
-      "name": "TOYOTA JIDOSHA KABUSHIKI KAISHA",
-      "patents": 171
-    },
-    {
-      "name": "QUALCOMM Incorporated",
-      "patents": 169
-    },
-    {
-      "name": "Apple Inc.",
-      "patents": 167
-    },
-    {
-      "name": "LG ELECTRONICS INC.",
-      "patents": 165
-    },
-    {
-      "name": "Amazon Technologies, Inc.",
-      "patents": 159
+      "patents": 415
     },
     {
       "name": "Microsoft Technology Licensing, LLC",
-      "patents": 158
+      "patents": 380
     },
     {
-      "name": "BOE Technology Group Co., Ltd.",
-      "patents": 149
+      "name": "LG ELECTRONICS INC.",
+      "patents": 374
     },
     {
-      "name": "SONY GROUP CORPORATION",
-      "patents": 145
-    },
-    {
-      "name": "GOOGLE LLC",
-      "patents": 143
+      "name": "FORD GLOBAL TECHNOLOGIES, LLC",
+      "patents": 363
     },
     {
       "name": "Taiwan Semiconductor Manufacturing Company, Ltd.",
-      "patents": 135
+      "patents": 351
+    },
+    {
+      "name": "QUALCOMM Incorporated",
+      "patents": 349
+    },
+    {
+      "name": "Apple Inc.",
+      "patents": 343
+    },
+    {
+      "name": "Amazon Technologies, Inc.",
+      "patents": 334
+    },
+    {
+      "name": "GOOGLE LLC",
+      "patents": 314
+    },
+    {
+      "name": "TOYOTA JIDOSHA KABUSHIKI KAISHA",
+      "patents": 301
+    },
+    {
+      "name": "BOE Technology Group Co., Ltd.",
+      "patents": 297
+    },
+    {
+      "name": "SONY GROUP CORPORATION",
+      "patents": 285
     },
     {
       "name": "General Electric Company",
-      "patents": 134
+      "patents": 272
     },
     {
       "name": "HUAWEI TECHNOLOGIES CO., LTD.",
-      "patents": 131
+      "patents": 266
     },
     {
       "name": "Hyundai Motor Company",
-      "patents": 126
-    },
-    {
-      "name": "Robert Bosch GmbH",
-      "patents": 124
-    },
-    {
-      "name": "TELEFONAKTIEBOLAGET LM ERICSSON (PUBL)",
-      "patents": 119
-    },
-    {
-      "name": "MITSUBISHI ELECTRIC CORPORATION",
-      "patents": 118
+      "patents": 223
     },
     {
       "name": "The Boeing Company",
-      "patents": 117
+      "patents": 213
+    },
+    {
+      "name": "Robert Bosch GmbH",
+      "patents": 210
     },
     {
       "name": "PANASONIC INTELLECTUAL PROPERTY MANAGEMENT CO., LTD.",
-      "patents": 111
+      "patents": 209
+    },
+    {
+      "name": "MITSUBISHI ELECTRIC CORPORATION",
+      "patents": 207
     },
     {
       "name": "SEIKO EPSON CORPORATION",
-      "patents": 105
+      "patents": 205
     },
     {
-      "name": "Fujitsu Limited",
-      "patents": 97
+      "name": "TELEFONAKTIEBOLAGET LM ERICSSON (PUBL)",
+      "patents": 202
+    },
+    {
+      "name": "Kabushiki Kaisha Toshiba",
+      "patents": 189
     }
   ],
   "top_countries": [
     {
       "country": "US",
-      "share": 0.456642
+      "share": 0.457164
     },
     {
       "country": "JP",
-      "share": 0.150857
+      "share": 0.148291
     },
     {
       "country": "KR",
-      "share": 0.059366
+      "share": 0.061697
     },
     {
       "country": "DE",
-      "share": 0.056997
+      "share": 0.055008
     },
     {
       "country": "CN",
-      "share": 0.050631
+      "share": 0.052999
     },
     {
       "country": "TW",
-      "share": 0.030793
+      "share": 0.032102
     },
     {
       "country": "GB",
-      "share": 0.026759
+      "share": 0.027255
     },
     {
       "country": "CA",
-      "share": 0.026537
+      "share": 0.024417
     },
     {
       "country": "FR",
-      "share": 0.025056
+      "share": 0.023662
     },
     {
       "country": "IN",
-      "share": 0.016544
+      "share": 0.017728
     },
     {
       "country": "IL",
-      "share": 0.01325
-    },
-    {
-      "country": "NL",
-      "share": 0.01114
-    },
-    {
-      "country": "IT",
-      "share": 0.010807
+      "share": 0.013913
     },
     {
       "country": "CH",
-      "share": 0.010474
+      "share": 0.010633
+    },
+    {
+      "country": "NL",
+      "share": 0.010578
+    },
+    {
+      "country": "IT",
+      "share": 0.010301
     },
     {
       "country": "SE",
-      "share": 0.010252
+      "share": 0.009859
     },
     {
       "country": "AU",
-      "share": 0.006033
+      "share": 0.006247
     },
     {
       "country": "(unknown)",
-      "share": 0.005922
+      "share": 0.005639
     },
     {
       "country": "BE",
-      "share": 0.005626
-    },
-    {
-      "country": "FI",
-      "share": 0.0047
+      "share": 0.005547
     },
     {
       "country": "AT",
-      "share": 0.0047
+      "share": 0.005012
     },
     {
-      "country": "ES",
-      "share": 0.00433
-    },
-    {
-      "country": "DK",
-      "share": 0.004182
+      "country": "FI",
+      "share": 0.004607
     },
     {
       "country": "SG",
-      "share": 0.004034
+      "share": 0.004386
+    },
+    {
+      "country": "DK",
+      "share": 0.004017
+    },
+    {
+      "country": "ES",
+      "share": 0.003962
     },
     {
       "country": "IE",
-      "share": 0.002221
+      "share": 0.002875
     },
     {
       "country": "SA",
-      "share": 0.002147
+      "share": 0.002101
     }
   ],
   "patents_by_year": [
@@ -317,7 +317,7 @@
     },
     {
       "year": 2002,
-      "patents": 4
+      "patents": 6
     },
     {
       "year": 2003,
@@ -325,63 +325,63 @@
     },
     {
       "year": 2004,
-      "patents": 5
+      "patents": 11
     },
     {
       "year": 2005,
-      "patents": 15
+      "patents": 36
     },
     {
       "year": 2006,
-      "patents": 41
+      "patents": 68
     },
     {
       "year": 2007,
-      "patents": 34
+      "patents": 68
     },
     {
       "year": 2008,
-      "patents": 58
+      "patents": 107
     },
     {
       "year": 2009,
-      "patents": 91
+      "patents": 186
     },
     {
       "year": 2010,
-      "patents": 160
+      "patents": 311
     },
     {
       "year": 2011,
-      "patents": 329
+      "patents": 667
     },
     {
       "year": 2012,
-      "patents": 758
+      "patents": 1416
     },
     {
       "year": 2013,
-      "patents": 1767
+      "patents": 3447
     },
     {
       "year": 2014,
-      "patents": 3692
+      "patents": 7185
     },
     {
       "year": 2015,
-      "patents": 5951
+      "patents": 11610
     },
     {
       "year": 2016,
-      "patents": 7162
+      "patents": 14387
     },
     {
       "year": 2017,
-      "patents": 4749
+      "patents": 9988
     },
     {
       "year": 2018,
-      "patents": 176
+      "patents": 499
     }
   ],
   "notes": {

@@ -68,6 +68,8 @@ Stages individually:
 python scripts/clean.py --sample 25000
 python scripts/load.py
 python scripts/analyze.py
+# Rich console output for presentations:
+python scripts/analyze.py --detail
 ```
 
 ### Full corpus

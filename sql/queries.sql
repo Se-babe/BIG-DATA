@@ -47,7 +47,7 @@ JOIN relationships AS r ON r.patent_id = p.patent_id
 JOIN inventors AS i ON i.inventor_id = r.inventor_id
 LEFT JOIN companies AS c ON c.company_id = r.company_id
 ORDER BY p.patent_id
-LIMIT 50;
+LIMIT 120;
 
 -- QUERY: Q6_CTE_RECENT_INVENTORS
 WITH recent_patents AS (
@@ -72,7 +72,7 @@ SELECT i.inventor_id,
 FROM counts AS c
 JOIN inventors AS i ON i.inventor_id = c.inventor_id
 ORDER BY c.patent_count DESC
-LIMIT 25;
+LIMIT 60;
 
 -- QUERY: Q7_RANKED_INVENTORS
 WITH inventor_totals AS (
@@ -89,4 +89,4 @@ SELECT inventor_id,
        DENSE_RANK() OVER (ORDER BY patent_count DESC) AS rank_by_patents
 FROM inventor_totals
 ORDER BY rank_by_patents, patent_count DESC, name
-LIMIT 50;
+LIMIT 80;
