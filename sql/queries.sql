@@ -35,6 +35,80 @@ WHERE year IS NOT NULL
 GROUP BY year
 ORDER BY year;
 
+-- QUERY: Q8_TOP_COUNTRIES_YEAR_TREND
+-- Patents per grant year for the top inventor countries (by overall linked volume)
+WITH country_totals AS (
+  SELECT COALESCE(NULLIF(TRIM(i.country), ''), '(unknown)') AS country,
+         COUNT(DISTINCT r.patent_id) AS tot
+  FROM inventors AS i
+  JOIN relationships AS r ON r.inventor_id = i.inventor_id
+  GROUP BY country
+),
+ranked AS (
+  SELECT country,
+         tot,
+         ROW_NUMBER() OVER (ORDER BY tot DESC) AS rk
+  FROM country_totals
+),
+top_cty AS (
+  SELECT country FROM ranked WHERE rk <= 8
+),
+ye AS (
+  SELECT p.year AS year,
+         COALESCE(NULLIF(TRIM(i.country), ''), '(unknown)') AS country,
+         COUNT(DISTINCT p.patent_id) AS patents_in_year
+  FROM patents AS p
+  JOIN relationships AS r ON r.patent_id = p.patent_id
+  JOIN inventors AS i ON i.inventor_id = r.inventor_id
+  WHERE p.year IS NOT NULL
+  GROUP BY p.year, country
+)
+SELECT ye.year,
+       ye.country,
+       ye.patents_in_year
+FROM ye
+JOIN top_cty AS tc ON tc.country = ye.country
+ORDER BY ye.year, ye.country;
+
+-- QUERY: Q9_TOP_CPC_PREFIX_YEAR_TREND
+-- First 4 characters of primary CPC (rough technology bucket) × year for top prefixes
+WITH prefixed AS (
+  SELECT year,
+         UPPER(SUBSTR(TRIM(cpc_primary), 1, 4)) AS cpc_prefix
+  FROM patents
+  WHERE year IS NOT NULL
+    AND cpc_primary IS NOT NULL
+    AND TRIM(cpc_primary) != ''
+),
+prefix_totals AS (
+  SELECT cpc_prefix,
+         COUNT(*) AS tot
+  FROM prefixed
+  GROUP BY cpc_prefix
+),
+ranked AS (
+  SELECT cpc_prefix,
+         tot,
+         ROW_NUMBER() OVER (ORDER BY tot DESC) AS rk
+  FROM prefix_totals
+),
+top_p AS (
+  SELECT cpc_prefix FROM ranked WHERE rk <= 10
+),
+agg AS (
+  SELECT year,
+         cpc_prefix,
+         COUNT(*) AS patents_in_year
+  FROM prefixed
+  GROUP BY year, cpc_prefix
+)
+SELECT a.year,
+       a.cpc_prefix,
+       a.patents_in_year
+FROM agg AS a
+JOIN top_p AS tp ON tp.cpc_prefix = a.cpc_prefix
+ORDER BY a.year, a.cpc_prefix;
+
 -- QUERY: Q5_JOIN_SAMPLE
 SELECT p.patent_id,
        p.title,
