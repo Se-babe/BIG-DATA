@@ -1,847 +1,403 @@
 {
-  "total_patents": 4000000,
+  "total_patents": 250000,
   "top_inventors": [
     {
-      "name": "Tao Luo",
-      "patents": 4081
-    },
-    {
-      "name": "Junyi Li",
-      "patents": 2335
-    },
-    {
-      "name": "Frederick E. Shelton, IV",
-      "patents": 2051
-    },
-    {
-      "name": "Xiaoxia Zhang",
-      "patents": 1991
-    },
-    {
-      "name": "Peter Gaal",
-      "patents": 1985
-    },
-    {
-      "name": "Wanshi Chen",
-      "patents": 1893
-    },
-    {
       "name": "Shunpei Yamazaki",
-      "patents": 1882
+      "patents": 2566
     },
     {
-      "name": "Jing Sun",
-      "patents": 1789
+      "name": "Kia Silverbrook",
+      "patents": 1699
     },
     {
-      "name": "Esmael Hejazi Dinan",
-      "patents": 1698
-    },
-    {
-      "name": "Shan Liu",
-      "patents": 1660
+      "name": "Tao Luo",
+      "patents": 1608
     },
     {
       "name": "Kangguo Cheng",
-      "patents": 1399
+      "patents": 1191
     },
     {
-      "name": "Kai Zhang",
-      "patents": 1263
+      "name": "Junyi Li",
+      "patents": 1066
     },
     {
-      "name": "Sarbajit K. Rakshit",
-      "patents": 1238
+      "name": "Jonathan P. Ive",
+      "patents": 1040
     },
     {
-      "name": "Hanbyul Seo",
-      "patents": 1226
+      "name": "Frederick E. Shelton, IV",
+      "patents": 1012
     },
     {
-      "name": "Yunjung Yi",
-      "patents": 1218
+      "name": "Peter Gaal",
+      "patents": 976
     },
     {
-      "name": "Li Zhang",
-      "patents": 1173
+      "name": "Duncan Robert Kerr",
+      "patents": 923
+    },
+    {
+      "name": "Wanshi Chen",
+      "patents": 908
+    },
+    {
+      "name": "Bartley K. Andre",
+      "patents": 904
+    },
+    {
+      "name": "Richard P. Howarth",
+      "patents": 874
+    },
+    {
+      "name": "Xiaoxia Zhang",
+      "patents": 801
+    },
+    {
+      "name": "Roderick A. Hyde",
+      "patents": 789
+    },
+    {
+      "name": "Lowell L. Wood, JR.",
+      "patents": 771
+    },
+    {
+      "name": "Eugene Antony Whang",
+      "patents": 768
     },
     {
       "name": "Chen-Hua Yu",
-      "patents": 1167
+      "patents": 759
     },
     {
-      "name": "Jason L. Harris",
-      "patents": 1093
+      "name": "Hanbyul Seo",
+      "patents": 741
     },
     {
-      "name": "Dawei Zhang",
-      "patents": 1070
+      "name": "Christopher J. Stringer",
+      "patents": 707
     },
     {
-      "name": "Sony Akkarakaran",
-      "patents": 1061
+      "name": "Rico Z\u00f6rkend\u00f6rfer",
+      "patents": 703
     },
     {
-      "name": "Seungmin LEE",
-      "patents": 1016
+      "name": "Esmael Hejazi Dinan",
+      "patents": 686
     },
     {
-      "name": "Yan Zhou",
-      "patents": 1016
+      "name": "Jing Sun",
+      "patents": 652
     },
     {
-      "name": "Suckchel Yang",
-      "patents": 989
+      "name": "Matthew Dean Rohrbach",
+      "patents": 634
     },
     {
-      "name": "Takahiro NISHI",
-      "patents": 918
+      "name": "Daniele De Iuliis",
+      "patents": 615
     },
     {
-      "name": "Kyungmin Park",
-      "patents": 898
+      "name": "Shan Liu",
+      "patents": 600
     }
   ],
   "top_companies": [
     {
       "name": "SAMSUNG DISPLAY CO., LTD.",
-      "patents": 72553
+      "patents": 122384
     },
     {
       "name": "International Business Machines Corporation",
-      "patents": 56282
+      "patents": 118612
     },
     {
       "name": "CANON KABUSHIKI KAISHA",
-      "patents": 33322
-    },
-    {
-      "name": "Taiwan Semiconductor Manufacturing Company, Ltd.",
-      "patents": 24232
-    },
-    {
-      "name": "General Electric Company",
-      "patents": 24078
-    },
-    {
-      "name": "QUALCOMM Incorporated",
-      "patents": 21772
-    },
-    {
-      "name": "HUAWEI TECHNOLOGIES CO., LTD.",
-      "patents": 20071
-    },
-    {
-      "name": "Apple Inc.",
-      "patents": 19691
-    },
-    {
-      "name": "LG ELECTRONICS INC.",
-      "patents": 19535
+      "patents": 51664
     },
     {
       "name": "Intel Corporation",
-      "patents": 19489
-    },
-    {
-      "name": "MITSUBISHI ELECTRIC CORPORATION",
-      "patents": 19152
+      "patents": 36704
     },
     {
       "name": "SONY GROUP CORPORATION",
-      "patents": 18109
+      "patents": 36544
     },
     {
-      "name": "TOYOTA JIDOSHA KABUSHIKI KAISHA",
-      "patents": 17883
+      "name": "LG ELECTRONICS INC.",
+      "patents": 35153
     },
     {
       "name": "HITACHI, LTD.",
-      "patents": 17103
+      "patents": 33526
     },
     {
       "name": "Fujitsu Limited",
-      "patents": 16994
+      "patents": 33436
     },
     {
-      "name": "Microsoft Technology Licensing, LLC",
-      "patents": 16925
+      "name": "General Electric Company",
+      "patents": 33112
     },
     {
       "name": "Kabushiki Kaisha Toshiba",
-      "patents": 14419
+      "patents": 31602
     },
     {
-      "name": "Amazon Technologies, Inc.",
-      "patents": 14022
+      "name": "QUALCOMM Incorporated",
+      "patents": 31471
+    },
+    {
+      "name": "Taiwan Semiconductor Manufacturing Company, Ltd.",
+      "patents": 31098
+    },
+    {
+      "name": "Apple Inc.",
+      "patents": 29782
+    },
+    {
+      "name": "MITSUBISHI ELECTRIC CORPORATION",
+      "patents": 28340
+    },
+    {
+      "name": "SUMITOMO ELECTRIC INDUSTRIES, LTD.",
+      "patents": 23585
+    },
+    {
+      "name": "TOYOTA JIDOSHA KABUSHIKI KAISHA",
+      "patents": 21749
     },
     {
       "name": "GOOGLE LLC",
-      "patents": 13828
+      "patents": 21405
     },
     {
       "name": "Micron Technology, Inc.",
-      "patents": 13138
-    },
-    {
-      "name": "Siemens Aktiengesellschaft",
-      "patents": 12115
-    },
-    {
-      "name": "Robert Bosch GmbH",
-      "patents": 11990
-    },
-    {
-      "name": "Texas Instruments Incorporated",
-      "patents": 11959
-    },
-    {
-      "name": "FORD GLOBAL TECHNOLOGIES, LLC",
-      "patents": 11948
+      "patents": 21326
     },
     {
       "name": "HONDA MOTOR CO., LTD.",
-      "patents": 11848
+      "patents": 19975
+    },
+    {
+      "name": "Microsoft Technology Licensing, LLC",
+      "patents": 19028
+    },
+    {
+      "name": "HUAWEI TECHNOLOGIES CO., LTD.",
+      "patents": 18953
+    },
+    {
+      "name": "FORD GLOBAL TECHNOLOGIES, LLC",
+      "patents": 18907
+    },
+    {
+      "name": "SEIKO EPSON CORPORATION",
+      "patents": 18488
+    },
+    {
+      "name": "Robert Bosch GmbH",
+      "patents": 18070
+    },
+    {
+      "name": "Siemens Aktiengesellschaft",
+      "patents": 17878
     }
   ],
   "top_countries": [
     {
       "country": "US",
-      "share": 0.48131
+      "share": 0.478545
     },
     {
       "country": "JP",
-      "share": 0.140231
-    },
-    {
-      "country": "DE",
-      "share": 0.063962
-    },
-    {
-      "country": "CN",
-      "share": 0.05859
+      "share": 0.184572
     },
     {
       "country": "KR",
-      "share": 0.042076
+      "share": 0.072282
     },
     {
-      "country": "GB",
-      "share": 0.028824
+      "country": "CN",
+      "share": 0.055291
+    },
+    {
+      "country": "DE",
+      "share": 0.043928
     },
     {
       "country": "TW",
-      "share": 0.025318
-    },
-    {
-      "country": "FR",
-      "share": 0.025178
+      "share": 0.033852
     },
     {
       "country": "CA",
-      "share": 0.024265
+      "share": 0.018697
+    },
+    {
+      "country": "GB",
+      "share": 0.017877
+    },
+    {
+      "country": "FR",
+      "share": 0.014395
     },
     {
       "country": "IN",
-      "share": 0.016161
-    },
-    {
-      "country": "CH",
-      "share": 0.013377
-    },
-    {
-      "country": "IT",
-      "share": 0.010731
+      "share": 0.011457
     },
     {
       "country": "IL",
-      "share": 0.010393
+      "share": 0.010987
+    },
+    {
+      "country": "CH",
+      "share": 0.007879
     },
     {
       "country": "SE",
-      "share": 0.009764
+      "share": 0.00784
     },
     {
       "country": "NL",
-      "share": 0.00959
+      "share": 0.007171
+    },
+    {
+      "country": "IT",
+      "share": 0.006345
     },
     {
       "country": "AU",
-      "share": 0.006152
-    },
-    {
-      "country": "(unknown)",
-      "share": 0.005238
-    },
-    {
-      "country": "AT",
-      "share": 0.004929
-    },
-    {
-      "country": "BE",
-      "share": 0.004847
+      "share": 0.004926
     },
     {
       "country": "FI",
-      "share": 0.00393
+      "share": 0.003652
+    },
+    {
+      "country": "AT",
+      "share": 0.003433
     },
     {
       "country": "SG",
-      "share": 0.003516
+      "share": 0.003344
+    },
+    {
+      "country": "BE",
+      "share": 0.00332
+    },
+    {
+      "country": "(unknown)",
+      "share": 0.002593
     },
     {
       "country": "DK",
-      "share": 0.003416
-    },
-    {
-      "country": "ES",
-      "share": 0.002919
+      "share": 0.002394
     },
     {
       "country": "IE",
-      "share": 0.002706
+      "share": 0.002193
+    },
+    {
+      "country": "ES",
+      "share": 0.001548
     },
     {
       "country": "SA",
-      "share": 0.002578
+      "share": 0.001478
     }
   ],
   "patents_by_year": [
     {
-      "year": 975,
-      "patents": 1
-    },
-    {
-      "year": 1074,
-      "patents": 4
-    },
-    {
-      "year": 1075,
-      "patents": 4
-    },
-    {
-      "year": 1076,
-      "patents": 1
-    },
-    {
-      "year": 1077,
-      "patents": 1
-    },
-    {
-      "year": 1078,
-      "patents": 2
-    },
-    {
-      "year": 1082,
-      "patents": 1
-    },
-    {
-      "year": 1096,
-      "patents": 1
-    },
-    {
-      "year": 1298,
-      "patents": 1
-    },
-    {
-      "year": 1682,
-      "patents": 1
-    },
-    {
-      "year": 1868,
-      "patents": 1
-    },
-    {
-      "year": 1872,
-      "patents": 1
-    },
-    {
-      "year": 1873,
-      "patents": 1
-    },
-    {
-      "year": 1877,
-      "patents": 3
-    },
-    {
-      "year": 1878,
-      "patents": 2
-    },
-    {
-      "year": 1885,
-      "patents": 1
-    },
-    {
-      "year": 1897,
-      "patents": 1
-    },
-    {
-      "year": 1901,
-      "patents": 2
-    },
-    {
-      "year": 1902,
-      "patents": 1
-    },
-    {
-      "year": 1903,
-      "patents": 2
-    },
-    {
-      "year": 1904,
-      "patents": 2
-    },
-    {
-      "year": 1908,
-      "patents": 1
-    },
-    {
-      "year": 1909,
-      "patents": 1
-    },
-    {
-      "year": 1915,
-      "patents": 1
-    },
-    {
-      "year": 1918,
-      "patents": 1
-    },
-    {
-      "year": 1921,
-      "patents": 1
-    },
-    {
-      "year": 1922,
-      "patents": 1
-    },
-    {
-      "year": 1925,
-      "patents": 1
-    },
-    {
-      "year": 1929,
-      "patents": 1
-    },
-    {
-      "year": 1931,
-      "patents": 2
-    },
-    {
-      "year": 1936,
-      "patents": 1
-    },
-    {
-      "year": 1938,
-      "patents": 4
-    },
-    {
-      "year": 1939,
-      "patents": 1
-    },
-    {
-      "year": 1940,
-      "patents": 3
-    },
-    {
-      "year": 1941,
-      "patents": 2
-    },
-    {
-      "year": 1943,
-      "patents": 4
-    },
-    {
-      "year": 1944,
-      "patents": 17
-    },
-    {
-      "year": 1945,
-      "patents": 18
-    },
-    {
-      "year": 1946,
-      "patents": 11
-    },
-    {
-      "year": 1947,
-      "patents": 3
-    },
-    {
-      "year": 1948,
-      "patents": 7
-    },
-    {
-      "year": 1949,
-      "patents": 10
-    },
-    {
-      "year": 1950,
-      "patents": 9
-    },
-    {
-      "year": 1951,
-      "patents": 10
-    },
-    {
-      "year": 1952,
-      "patents": 16
-    },
-    {
-      "year": 1953,
-      "patents": 11
-    },
-    {
-      "year": 1954,
-      "patents": 21
-    },
-    {
-      "year": 1955,
-      "patents": 23
-    },
-    {
-      "year": 1956,
-      "patents": 24
-    },
-    {
-      "year": 1957,
-      "patents": 18
-    },
-    {
-      "year": 1958,
-      "patents": 29
-    },
-    {
-      "year": 1959,
-      "patents": 39
-    },
-    {
-      "year": 1960,
-      "patents": 43
-    },
-    {
-      "year": 1961,
-      "patents": 61
-    },
-    {
-      "year": 1962,
-      "patents": 79
-    },
-    {
-      "year": 1963,
-      "patents": 75
-    },
-    {
-      "year": 1964,
-      "patents": 99
-    },
-    {
-      "year": 1965,
-      "patents": 109
-    },
-    {
-      "year": 1966,
-      "patents": 133
-    },
-    {
-      "year": 1967,
-      "patents": 150
-    },
-    {
-      "year": 1968,
-      "patents": 187
-    },
-    {
-      "year": 1969,
-      "patents": 293
-    },
-    {
-      "year": 1970,
-      "patents": 511
-    },
-    {
-      "year": 1971,
-      "patents": 1143
-    },
-    {
-      "year": 1972,
-      "patents": 2143
-    },
-    {
-      "year": 1973,
-      "patents": 8284
-    },
-    {
-      "year": 1974,
-      "patents": 38067
-    },
-    {
-      "year": 1975,
-      "patents": 64965
-    },
-    {
-      "year": 1976,
-      "patents": 65784
-    },
-    {
-      "year": 1977,
-      "patents": 65965
-    },
-    {
-      "year": 1978,
-      "patents": 65581
-    },
-    {
-      "year": 1979,
-      "patents": 65716
-    },
-    {
-      "year": 1980,
-      "patents": 66468
-    },
-    {
-      "year": 1981,
-      "patents": 63896
-    },
-    {
-      "year": 1982,
-      "patents": 65001
-    },
-    {
-      "year": 1983,
-      "patents": 61543
-    },
-    {
       "year": 1984,
-      "patents": 67035
+      "patents": 1
     },
     {
       "year": 1985,
-      "patents": 71413
-    },
-    {
-      "year": 1986,
-      "patents": 75045
-    },
-    {
-      "year": 1987,
-      "patents": 81398
-    },
-    {
-      "year": 1988,
-      "patents": 90015
-    },
-    {
-      "year": 1989,
-      "patents": 95840
-    },
-    {
-      "year": 1990,
-      "patents": 98586
-    },
-    {
-      "year": 1991,
-      "patents": 98057
+      "patents": 1
     },
     {
       "year": 1992,
-      "patents": 96521
-    },
-    {
-      "year": 1993,
-      "patents": 76079
-    },
-    {
-      "year": 1994,
-      "patents": 20221
-    },
-    {
-      "year": 1995,
-      "patents": 59
-    },
-    {
-      "year": 1996,
-      "patents": 2
-    },
-    {
-      "year": 1997,
-      "patents": 3
-    },
-    {
-      "year": 1998,
-      "patents": 9
+      "patents": 1
     },
     {
       "year": 1999,
-      "patents": 26
+      "patents": 1
     },
     {
       "year": 2000,
-      "patents": 8
+      "patents": 1
     },
     {
       "year": 2001,
-      "patents": 23
+      "patents": 11
     },
     {
       "year": 2002,
-      "patents": 39
+      "patents": 17
     },
     {
       "year": 2003,
-      "patents": 67
+      "patents": 25
     },
     {
       "year": 2004,
-      "patents": 132
+      "patents": 54
     },
     {
       "year": 2005,
-      "patents": 244
+      "patents": 108
     },
     {
       "year": 2006,
-      "patents": 488
+      "patents": 215
     },
     {
       "year": 2007,
-      "patents": 714
+      "patents": 308
     },
     {
       "year": 2008,
-      "patents": 1158
+      "patents": 481
     },
     {
       "year": 2009,
-      "patents": 1674
+      "patents": 719
     },
     {
       "year": 2010,
-      "patents": 2741
+      "patents": 1243
     },
     {
       "year": 2011,
-      "patents": 5384
+      "patents": 2474
     },
     {
       "year": 2012,
-      "patents": 11425
+      "patents": 5534
     },
     {
       "year": 2013,
-      "patents": 26947
+      "patents": 13195
     },
     {
       "year": 2014,
-      "patents": 62534
+      "patents": 29613
     },
     {
       "year": 2015,
-      "patents": 124660
+      "patents": 51142
     },
     {
       "year": 2016,
-      "patents": 213723
+      "patents": 70190
     },
     {
       "year": 2017,
-      "patents": 302766
+      "patents": 61719
     },
     {
       "year": 2018,
-      "patents": 331446
-    },
-    {
-      "year": 2019,
-      "patents": 351015
-    },
-    {
-      "year": 2020,
-      "patents": 329036
-    },
-    {
-      "year": 2021,
-      "patents": 289625
-    },
-    {
-      "year": 2022,
-      "patents": 232672
-    },
-    {
-      "year": 2023,
-      "patents": 148363
-    },
-    {
-      "year": 2024,
-      "patents": 51104
-    },
-    {
-      "year": 2025,
-      "patents": 5064
-    },
-    {
-      "year": 2975,
-      "patents": 1
-    },
-    {
-      "year": 2976,
-      "patents": 1
-    },
-    {
-      "year": 2982,
-      "patents": 1
-    },
-    {
-      "year": 2984,
-      "patents": 1
-    },
-    {
-      "year": 2986,
-      "patents": 1
-    },
-    {
-      "year": 2987,
-      "patents": 2
-    },
-    {
-      "year": 7978,
-      "patents": 1
-    },
-    {
-      "year": 8198,
-      "patents": 1
-    },
-    {
-      "year": 9173,
-      "patents": 2
-    },
-    {
-      "year": 9174,
-      "patents": 1
-    },
-    {
-      "year": 9175,
-      "patents": 1
-    },
-    {
-      "year": 9176,
-      "patents": 1
-    },
-    {
-      "year": 9177,
-      "patents": 1
-    },
-    {
-      "year": 9178,
-      "patents": 1
-    },
-    {
-      "year": 9183,
-      "patents": 1
-    },
-    {
-      "year": 9186,
-      "patents": 1
+      "patents": 12947
     }
   ],
   "notes": {
