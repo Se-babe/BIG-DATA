@@ -3,6 +3,7 @@
 End-to-end pipeline for USPTO **PatentsView** bulk grants (`pvgpatdis`): chunked pandas cleaning → SQLite warehouse → analytical SQL → CSV / JSON / console reporting.
 
 Bulk landing page (dictionary PDF lives alongside the downloads):
+link to patents.db https://drive.google.com/file/d/1DyAGOn7NQgua0G0jo2PSnWPNOrMguUSp/view?usp=drive_link
 
 https://data.uspto.gov/bulkdata/datasets/pvgpatdis
 
